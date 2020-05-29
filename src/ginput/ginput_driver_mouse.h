@@ -92,7 +92,7 @@ typedef struct GMouseVMT {
 	gBool	(*calload)(GMouse *m, void *buf, gMemSize sz);	// Optional
 } GMouseVMT;
 
-#define gmvmt(m)		((const GMouseVMT const *)((m)->d.vmt))
+#define gmvmt(m)		((const GMouseVMT *)((m)->d.vmt))
 
 /*===========================================================================*/
 /* External declarations.                                                    */
