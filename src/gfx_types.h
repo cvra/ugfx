@@ -149,7 +149,7 @@
 typedef void *				gAny;
 typedef void *				gPtr;
 typedef ptrdiff_t			gPtrDiff;
-#if GFX_MEM_LT64K
+#if defined(GFX_MEM_LT64K) && GFX_MEM_LT64K
 	typedef gU16			gMemSize;
 #else
 	typedef gU32			gMemSize;
