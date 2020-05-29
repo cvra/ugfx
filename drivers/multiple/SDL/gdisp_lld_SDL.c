@@ -336,8 +336,8 @@ void sdl_driver_init (void) {
 	}
 	pid_t gui_pid = fork ();
 
-	if (gui_pid) {
-		// Main proccess. It's for host UI and SDL
+	if (gui_pid == 0) {
+		// child proccess. It's for host UI and SDL
 		int status;
 		memset (context,0,sizeof (*context));
 		context->need_redraw = 1;

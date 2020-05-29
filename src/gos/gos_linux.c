@@ -169,7 +169,7 @@ gThreadreturn gfxThreadWait(gThread thread) {
 
 		res = 0;
 		sem_getvalue(&pSem->sem, &res);
-		if (res < pSem->max)
+		if (res < (int)pSem->max)
 			sem_post(&pSem->sem);
 	}
 #else

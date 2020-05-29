@@ -25,9 +25,6 @@
 /* Type definitions                                                          */
 /*===========================================================================*/
 
-// Forward definition
-typedef struct gPoint gPoint;
-
 /**
  * @brief	Sample data formats
  * @note	These are defined regardless of whether you use the GMISC module
