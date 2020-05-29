@@ -666,7 +666,7 @@ void _gmouseInit(void) {
 			extern const GMouseVMT GMOUSEVMT_OnlyOne[1];
 
             if (!(GMOUSEVMT_OnlyOne->d.flags & GMOUSE_VFLG_DYNAMICONLY))
-					gdriverRegister(&GMOUSEVMT_OnlyOne->d, GDISP);
+                    gdriverRegister(&GMOUSEVMT_OnlyOne->d, GDISP);
 		}
 	#endif
 
@@ -694,8 +694,8 @@ gBool _gmouseInitDriver(GDriver *g, void *display, unsigned driverinstance, unsi
         return gFalse;
 
 	// Ensure the Poll timer is started
-	if (!gtimerIsActive(&MouseTimer))
-		gtimerStart(&MouseTimer, MousePoll, 0, gTrue, GINPUT_MOUSE_POLL_PERIOD);
+    if (!gtimerIsActive(&MouseTimer))
+        gtimerStart(&MouseTimer, MousePoll, 0, gTrue, GINPUT_MOUSE_POLL_PERIOD);
 
     return gTrue;
 
@@ -806,15 +806,15 @@ gBool ginputGetMouseStatus(unsigned instance, GEventMouse *pe) {
 	gU32 ginputCalibrateMouse(unsigned instance) {
 		GMouse *m;
 
-		// Find the instance
-		if (!(m = (GMouse *)gdriverGetInstance(GDRIVER_TYPE_MOUSE, instance)))
-			return 0;
+        // Find the instance
+        if (!(m = (GMouse *)gdriverGetInstance(GDRIVER_TYPE_MOUSE, instance)))
+            return 0;
 
-		// Check it needs calibration
+        // Check it needs calibration
         if (!(gmvmt(m)->d.flags & GMOUSE_VFLG_CALIBRATE))
-        	return 0;
+            return 0;
 
-		return CalibrateMouse(m);
+        return CalibrateMouse(m);
 	}
 #endif
 
